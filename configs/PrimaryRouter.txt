@@ -1,0 +1,58 @@
+! PrimaryRouter - Cisco 1841 - final running-config
+! Password hashes removed for publishing
+!
+hostname PrimaryRouter
+!
+enable secret 5 <removed>
+!
+ip cef
+no ipv6 cef
+!
+username admin secret 5 <removed>
+!
+ip ssh version 2
+ip domain-name marksnetwork.local
+!
+spanning-tree mode pvst
+!
+interface FastEthernet0/0
+ no ip address
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/0.10
+ encapsulation dot1Q 10
+ ip address 10.0.0.1 255.255.255.0
+!
+interface FastEthernet0/0.20
+ encapsulation dot1Q 20
+ ip address 10.20.0.1 255.255.255.0
+!
+interface FastEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip classless
+!
+ip flow-export version 9
+!
+line con 0
+ logging synchronous
+ login local
+!
+line aux 0
+ logging synchronous
+ login local
+!
+line vty 0 4
+ logging synchronous
+ login local
+ transport input ssh
+!
+end
