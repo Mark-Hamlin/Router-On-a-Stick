@@ -6,7 +6,7 @@
 
 A Cisco Packet Tracer lab where I route traffic between two VLANs using **one physical router interface**. The switch sends both VLANs to the router over a single 802.1Q trunk, and the router splits them into **subinterfaces**, one per VLAN. This design is called **router-on-a-stick** (ROAS).
 
-> This is the follow-up to my [Inter-VLAN Routing lab](https://github.com/YOUR-USERNAME/intervlan-routing-lab), which used one router interface per VLAN. Here the same network uses just one cable between the router and switch.
+> This is the follow-up to my [Inter-VLAN Routing lab](https://github.com/Mark-Hamlin/intervlan-routing-lab), which used one router interface per VLAN. Here the same network uses just one cable between the router and switch.
 
 ---
 
@@ -334,7 +334,7 @@ PrimaryRouter# show vlans
 
 ## Router-on-a-Stick vs. One Interface per VLAN
 
-| | One interface per VLAN ([previous lab](https://github.com/YOUR-USERNAME/intervlan-routing-lab)) | Router-on-a-stick (this lab) |
+| | One interface per VLAN ([previous lab](https://github.com/Mark-Hamlin/intervlan-routing-lab)) | Router-on-a-stick (this lab) |
 |---|---|---|
 | Router ↔ switch cables | One per VLAN | **One in total** |
 | Switch ports facing the router | Access ports | **One trunk port** |
